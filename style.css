@@ -1,0 +1,157 @@
+/* Ordo Cutis - Projektseite
+   Ruhig, hell, hautfreundlich: warme Neutraltoene, viel Weissraum,
+   weiche Radien, keine harten Schatten. Bewusst ohne Framework und ohne
+   externe Ressourcen - die Seite soll in fuenf Jahren noch unveraendert
+   funktionieren. */
+
+:root {
+  --grund: #faf7f4;
+  --flaeche: #ffffff;
+  --text: #2e2a27;
+  --text-leise: #6b625b;
+  --linie: #e8e0d8;
+  --akzent-morgen: #b8763f;
+  --akzent-abend: #5a6b8c;
+  --radius: 20px;
+  --breite: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --grund: #1c1917;
+    --flaeche: #262220;
+    --text: #ede7e1;
+    --text-leise: #a89e96;
+    --linie: #3a3431;
+    --akzent-morgen: #e0a068;
+    --akzent-abend: #93a6cc;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 2rem 1.25rem 5rem;
+  background: var(--grund);
+  color: var(--text);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+main { max-width: var(--breite); margin: 0 auto; }
+
+header {
+  max-width: var(--breite);
+  margin: 0 auto 3rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--linie);
+}
+
+h1 {
+  font-size: 2.1rem;
+  line-height: 1.25;
+  margin: 0 0 .5rem;
+  letter-spacing: -0.01em;
+}
+
+.untertitel {
+  color: var(--text-leise);
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.35rem;
+  margin: 2.75rem 0 .75rem;
+  padding-top: .5rem;
+}
+
+h3 { font-size: 1.1rem; margin: 1.75rem 0 .5rem; }
+
+a { color: var(--akzent-abend); text-underline-offset: 3px; }
+a:hover { color: var(--akzent-morgen); }
+
+.karte {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: var(--radius);
+  padding: 1.5rem 1.75rem;
+  margin: 1.5rem 0;
+}
+
+.hinweis {
+  border-left: 4px solid var(--akzent-morgen);
+  background: var(--flaeche);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.hinweis strong { color: var(--akzent-morgen); }
+
+.platzhalter {
+  border-left: 4px solid #c0392b;
+  background: var(--flaeche);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  padding: 1.25rem 1.5rem;
+  margin: 1.75rem 0;
+}
+
+.platzhalter strong { color: #c0392b; }
+
+ul { padding-left: 1.35rem; }
+li { margin: .45rem 0; }
+
+.sprachen {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem;
+  margin: 1.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.sprachen a {
+  display: inline-block;
+  padding: .4rem 1rem;
+  border: 1px solid var(--linie);
+  border-radius: 999px;
+  background: var(--flaeche);
+  text-decoration: none;
+  font-size: .95rem;
+}
+
+footer {
+  max-width: var(--breite);
+  margin: 4rem auto 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--linie);
+  color: var(--text-leise);
+  font-size: .92rem;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.25rem 0;
+  font-size: .97rem;
+}
+
+th, td {
+  text-align: left;
+  padding: .6rem .5rem;
+  border-bottom: 1px solid var(--linie);
+  vertical-align: top;
+}
+
+th { color: var(--text-leise); font-weight: 600; }
+
+code {
+  background: var(--flaeche);
+  border: 1px solid var(--linie);
+  border-radius: 6px;
+  padding: .1rem .35rem;
+  font-size: .9em;
+}
